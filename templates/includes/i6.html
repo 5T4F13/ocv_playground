@@ -1,0 +1,73 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='erosion' name='erosion' {% if  ocv_info.erosion %} checked=true {% endif %}>
+            <label class='form-check-label' for='erosion'>Erosion</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k5 &nbsp &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k5" name='k5' min="1" max="15" step="1" value="{{ ocv_info.k5 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='dilation' name='dilation' {% if  ocv_info.dilation %} checked=true {% endif %}>
+            <label class='form-check-label' for='dilation'>Dilation</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k6 &nbsp &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k6" name='k6' min="1" max="15" step="1" value="{{ ocv_info.k6 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='opening' name='opening' {% if  ocv_info.opening %} checked=true {% endif %}>
+            <label class='form-check-label' for='opening'>Opening</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k7 &nbsp &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k7" name='k7' min="1" max="15" step="1" value="{{ ocv_info.k7 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='closing' name='closing' {% if  ocv_info.closing %} checked=true {% endif %}>
+            <label class='form-check-label' for='closing'>Closing</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k8 &nbsp &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k8" name='k8' min="1" max="15" step="1" value="{{ ocv_info.k8 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='morph_gradient' name='morph_gradient' {% if  ocv_info.morph_gradient %} checked=true {% endif %}>
+            <label class='form-check-label' for='morph_gradient'>Morphological Gradient</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k9 &nbsp &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k9" name='k9' min="1" max="15" step="1" value="{{ ocv_info.k9 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='top_hat' name='top_hat' {% if  ocv_info.top_hat %} checked=true {% endif %}>
+            <label class='form-check-label' for='top_hat'>Top Hat</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k10 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k10" name='k10' min="1" max="15" step="1" value="{{ ocv_info.k10 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='black_hat' name='black_hat' {% if  ocv_info.black_hat %} checked=true {% endif %}>
+            <label class='form-check-label' for='black_hat'>Black Hat</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k11 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k11" name='k11' min="1" max="15" step="1" value="{{ ocv_info.k11 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+</li>

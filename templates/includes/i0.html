@@ -1,0 +1,9 @@
+<li>
+    <div>
+        <div class='form-check'>
+            <input class='form-check-input' type="checkbox" id='include_original' name='include_original' {% if ocv_info.include_original %} checked=true {% endif %} onchange="document.getElementById('form_ocv').submit()">
+            <label class='form-check-label' for='include_original'>Include original image</label>
+        </div>
+        <a class="btn btn-light" href="/ocv" role="button">Go to original image</a>
+    </div>
+</li>

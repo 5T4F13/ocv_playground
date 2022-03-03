@@ -1,0 +1,11 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html" target="_blank">Documentation</a>
+    <div>
+        <select name="img_select" id="img_select" onchange="document.getElementById('form_ocv').submit()">
+            <option value="{{ ocv_info.current_image }}">{{ ocv_info.current_image }}</option>
+            {% for image in ocv_info.images %}
+                <option value={{ image }}>{{ image }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</li>

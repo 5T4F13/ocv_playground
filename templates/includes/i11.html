@@ -1,0 +1,29 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/de/db2/tutorial_py_table_of_contents_histograms.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='histogram_equalization' name='histogram_equalization' {% if  ocv_info.histogram_equalization %} checked=true {% endif %}>
+            <label class='form-check-label' for='histogram_equalization'>Histogram Equalization</label>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='clahe' name='clahe' {% if  ocv_info.clahe %} checked=true {% endif %}>
+            <label class='form-check-label' for='clahe'>CLAHE</label>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='backprojection' name='backprojection' {% if  ocv_info.backprojection %} checked=true {% endif %}>
+            <label class='form-check-label' for='backprojection'>Backprojection</label>
+        </div>
+	    <div class="col-xs-2" onchange="document.getElementById('form_ocv').submit()">
+	            <label for="p11">p31</label>
+	            <input class="smaller-input" id="p31x" name='p31x' type="text" placeholder="0" value="{{ ocv_info.p31x }}">
+	            <input class="smaller-input" id="p31y" name='p31y' type="text" placeholder="0" value="{{ ocv_info.p31y }}">
+	            <label for="p12">p32</label>
+	            <input class="smaller-input" id="p32x" name='p32x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p32x }}">
+	            <input class="smaller-input" id="p32y" name='p32y' type="text" placeholder="0" value="{{ ocv_info.p32y }}">
+	    </div>
+        <div class="d-flex justify-content-left">
+            <label>th3 &nbsp</label>
+            <span class="font-weight-bold indigo-text">0</span>
+                <input type="range" class="custom-range" id="th3" name='th3' min="0" max="255" step="1" value="{{ ocv_info.th3 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">255</span>
+        </div>
+</li>

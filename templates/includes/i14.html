@@ -1,0 +1,11 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d6/d10/tutorial_py_houghlines.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='hough_line_transform' name='hough_line_transform' {% if  ocv_info.hough_line_transform %} checked=true {% endif %}>
+            <label class='form-check-label' for='hough_line_transform'>Hough Line Transform</label>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='prob_hough_transform' name='prob_hough_transform' {% if  ocv_info.prob_hough_transform %} checked=true {% endif %}>
+            <label class='form-check-label' for='prob_hough_transform'>Probabilistic Hough Transform</label>
+        </div>
+</li>

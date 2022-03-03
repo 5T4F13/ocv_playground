@@ -1,0 +1,24 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d4/dc6/tutorial_py_template_matching.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='template_matching' name='template_matching' {% if  ocv_info.template_matching %} checked=true {% endif %}>
+            <label class='form-check-label' for='template_matching'>Template Matching</label>
+        </div>
+    <div class="col-xs-2" onchange="document.getElementById('form_ocv').submit()">
+            <label for="p11">p33</label>
+            <input class="smaller-input" id="p33x" name='p33x' type="text" placeholder="0" value="{{ ocv_info.p33x }}">
+            <input class="smaller-input" id="p33y" name='p31y' type="text" placeholder="0" value="{{ ocv_info.p31y }}">
+            <label for="p12">p34</label>
+            <input class="smaller-input" id="p34x" name='p34x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p34x }}">
+            <input class="smaller-input" id="p34y" name='p34y' type="text" placeholder="0" value="{{ ocv_info.p34y }}">
+    </div>
+    <select value="{{ ocv_info.tm_matching }}" name="tm_matching" id="tm_matching" onchange="document.getElementById('form_ocv').submit()">
+        <option value="{{ ocv_info.tm_matching }}">{{ ocv_info.tm_matching }}</option>
+        <option value="TM_CCOEFF">TM_CCOEFF</option>
+        <option value="TM_CCOEFF_NORMED">TM_CCOEFF_NORMED</option>
+        <option value="TM_CCORR">TM_CCORR</option>
+        <option value="TM_CCORR_NORMED">TM_CCORR_NORMED</option>
+        <option value="TM_SQDIFF">TM_SQDIFF</option>
+        <option value="TM_SQDIFF_NORMED">TM_SQDIFF_NORMED</option>
+    </select>
+</li>

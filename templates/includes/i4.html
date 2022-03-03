@@ -1,0 +1,51 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d7/d4d/tutorial_py_thresholding.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='simple_Thresholding' name='simple_Thresholding' {% if  ocv_info.simple_Thresholding %} checked=true {% endif %}>
+            <label class='form-check-label' for='simple_Thresholding'>Simple Thresholding</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>th &nbsp</label>
+            <span class="font-weight-bold indigo-text">0</span>
+                <input type="range" class="custom-range" id="thr1" name='thr1' min="0" max="255" step="10" value="{{ ocv_info.thr1 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">255</span>
+        </div>
+        <select value="{{ ocv_info.thr1_type }}" name="thr1_type" id="thr1_type" onchange="document.getElementById('form_ocv').submit()">
+            <option value="{{ ocv_info.thr1_type }}">{{ ocv_info.thr1_type }}</option>
+            <option value="THRESH_BINARY">THRESH_BINARY</option>
+            <option value="THRESH_BINARY_INV">THRESH_BINARY_INV</option>
+            <option value="THRESH_TRUNC">THRESH_TRUNC</option>
+            <option value="THRESH_TOZERO">THRESH_TOZERO</option>
+            <option value="THRESH_TOZERO_INV">THRESH_TOZERO_INV</option>
+        </select>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='Adaptive_Thresholding' name='Adaptive_Thresholding' {% if  ocv_info.Adaptive_Thresholding %} checked=true {% endif %}>
+            <label class='form-check-label' for='Adaptive_Thresholding'>Adaptive Thresholding</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>bs &nbsp</label>
+            <span class="font-weight-bold indigo-text">0</span>
+                <input type="range" class="custom-range" id="bs" name='bs' min="3" max="255" step="2" value="{{ ocv_info.bs }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">255</span>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>C &nbsp &nbsp</label>
+            <span class="font-weight-bold indigo-text">0</span>
+                <input type="range" class="custom-range" id="C" name='C' min="0" max="255" step="1" value="{{ ocv_info.C }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">255</span>
+        </div>
+        <select value="{{ ocv_info.adm_type }}" name="adm_type" id="adm_type" onchange="document.getElementById('form_ocv').submit()">
+            <option value="{{ ocv_info.adm_type }}">{{ ocv_info.adm_type }}</option>
+            <option value="ADAPTIVE_THRESH_MEAN_C">ADAPTIVE_THRESH_MEAN_C</option>
+            <option value="ADAPTIVE_THRESH_GAUSSIAN_C">ADAPTIVE_THRESH_GAUSSIAN_C</option>
+        </select>
+        <select value="{{ ocv_info.thr2_type }}" name="thr2_type" id="thr2_type" onchange="document.getElementById('form_ocv').submit()">
+            <option value="{{ ocv_info.thr2_type }}">{{ ocv_info.thr2_type }}</option>
+            <option value="THRESH_BINARY">THRESH_BINARY</option>
+            <option value="THRESH_BINARY_INV">THRESH_BINARY_INV</option>
+        </select>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='otsu' name='otsu' {% if  ocv_info.otsu %} checked=true {% endif %}>
+            <label class='form-check-label' for='otsu'>Otsu's Binarization</label>
+        </div>
+</li>

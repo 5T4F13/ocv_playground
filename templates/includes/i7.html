@@ -1,0 +1,27 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d5/d0f/tutorial_py_gradients.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='sobel_x' name='sobel_x' {% if  ocv_info.sobel_x %} checked=true {% endif %}>
+            <label class='form-check-label' for='sobel_x'>Sobel Derivatives (x)</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k12 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k12" name='k12' min="1" max="15" step="2" value="{{ ocv_info.k12 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='sobel_y' name='sobel_y' {% if  ocv_info.sobel_y %} checked=true {% endif %}>
+            <label class='form-check-label' for='sobel_y'>Sobel Derivatives (y)</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k13 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k13" name='k13' min="1" max="15" step="2" value="{{ ocv_info.k13 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">15</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='laplacian' name='laplacian' {% if  ocv_info.laplacian %} checked=true {% endif %}>
+            <label class='form-check-label' for='laplacian'>Laplacian Derivatives</label>
+        </div>
+</li>

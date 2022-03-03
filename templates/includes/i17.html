@@ -1,0 +1,22 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d8/d83/tutorial_py_grabcut.html" target="_blank">Documentation
+	</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='foreground' name='foreground' {% if  ocv_info.foreground %} checked=true {% endif %}>
+            <label class='form-check-label' for='foreground'>Foreground extraction</label>
+        </div>
+        <div class="col-xs-2" onchange="document.getElementById('form_ocv').submit()">
+            <label for="p35">p35</label>
+            <input class="smaller-input" id="p35x" name='p35x' type="text" placeholder="0" value="{{ ocv_info.p35x }}">
+            <input class="smaller-input" id="p35y" name='p35y' type="text" placeholder="0" value="{{ ocv_info.p35y }}">
+            <label for="p36">p36</label>
+            <input class="smaller-input" id="p36x" name='p36x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p36x }}">
+            <input class="smaller-input" id="p36y" name='p36y' type="text" placeholder="{{ ocv_info.ty_max }}" value="{{ ocv_info.p36y }}">
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>itr</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="itr" name='itr' min="1" max="10" step="1" value="{{ ocv_info.itr }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">10</span>
+        </div>
+</li>

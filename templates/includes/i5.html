@@ -1,0 +1,59 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='conv_2D' name='conv_2D' {% if  ocv_info.conv_2D %} checked=true {% endif %}>
+            <label class='form-check-label' for='conv_2D'>2D Convolution</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k1 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k1" name='k1' min="1" max="25" step="1" value="{{ ocv_info.k1 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">25</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='avg_blur' name='avg_blur' {% if  ocv_info.avg_blur %} checked=true {% endif %}>
+            <label class='form-check-label' for='avg_blur'>Averaging Blurring</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k2 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k2" name='k2' min="1" max="25" step="1" value="{{ ocv_info.k2 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">25</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='gaussian_blur' name='gaussian_blur' {% if  ocv_info.gaussian_blur %} checked=true {% endif %}>
+            <label class='form-check-label' for='gaussian_blur'>Gaussian Blurring</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k3 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k3" name='k3' min="1" max="25" step="2" value="{{ ocv_info.k3 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">25</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='median_blur' name='median_blur' {% if  ocv_info.median_blur %} checked=true {% endif %}>
+            <label class='form-check-label' for='median_blur'>Median Blurring</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>k4 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="k4" name='k4' min="1" max="25" step="2" value="{{ ocv_info.k4 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">25</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='bilateral_filter' name='bilateral_filter' {% if  ocv_info.bilateral_filter %} checked=true {% endif %}>
+            <label class='form-check-label' for='bilateral_filter'>Bilateral Filtering</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>d &nbsp &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="d" name='d' min="1" max="9" step="1" value="{{ ocv_info.d }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">9</span>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>sig</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="sig" name='sig' min="1" max="1000" step="10" value="{{ ocv_info.sig }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">1000</span>
+        </div>
+</li>

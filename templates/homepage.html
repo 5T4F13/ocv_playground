@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{ url_for('homepage') }}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('ocv') }}">OpenCv Python</a>
+    </li>
+  </ul>
+  <hr>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+

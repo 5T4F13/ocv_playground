@@ -1,0 +1,20 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/d3/d05/tutorial_py_table_of_contents_contours.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='find_draw_contours' name='find_draw_contours' {% if  ocv_info.find_draw_contours %} checked=true {% endif %}>
+            <label class='form-check-label' for='find_draw_contours'>Find and draw contours</label>
+        </div>
+        <select value="{{ ocv_info.retr_mode }}" name="retr_mode" id="retr_mode" onchange="document.getElementById('form_ocv').submit()">
+            <option value="{{ ocv_info.retr_mode }}">{{ ocv_info.retr_mode }}</option>
+            <option value="RETR_EXTERNAL">RETR_EXTERNAL</option>
+            <option value="RETR_LIST">RETR_LIST</option>
+            <!-- <option value="RETR_CCOMP">RETR_CCOMP</option> -->
+            <option value="RETR_TREE">RETR_TREE</option>
+            <!-- <option value="RETR_FLOODFILL">RETR_FLOODFILL</option> -->
+        </select>
+        <select value="{{ ocv_info.aprox_method }}" name="aprox_method" id="aprox_method" onchange="document.getElementById('form_ocv').submit()">
+            <option value="{{ ocv_info.aprox_method }}">{{ ocv_info.aprox_method }}</option>
+            <option value="CHAIN_APPROX_NONE">CHAIN_APPROX_NONE</option>
+            <option value="CHAIN_APPROX_SIMPLE">CHAIN_APPROX_SIMPLE</option>
+        </select>
+</li>

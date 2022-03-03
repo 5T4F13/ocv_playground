@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('homepage') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="{{ url_for('ocv') }}">OpenCv</a>
+      </li>
+    </ul>
+</div>
+<hr>
+
+<div class="sidenav" name='sidenav_bar', id='sidenav_bar'>
+    <header></header>
+    <ul class="nav" data-toggle="collapse">
+        <a href="https://docs.opencv.org/4.x/d2/d96/tutorial_py_table_of_contents_imgproc.html" target="_blank" style="font-size: 20px; text-decoration: none">Image Processing in OpenCV</a>
+        <form method='POST' name='form_ocv' id='form_ocv'>
+            <button class="dropdown-btn">Original image
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                {% include "includes/i0.html" %}
+            </div>
+            <button class="dropdown-btn">Select image
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                {% include "includes/i1.html" %}
+            </div>
+            <button class="dropdown-btn">Changing Colorspaces
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                {% include "includes/i2.html" %}
+            </div>
+            <button class="dropdown-btn">Geometric Transformations of Images
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">            
+                {% include "includes/i3.html" %}
+            </div>
+            <button class="dropdown-btn">Image Thresholding
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">    
+                {% include "includes/i4.html" %}
+            </div>
+            <button class="dropdown-btn">Smoothing Images
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">   
+                {% include "includes/i5.html" %}
+            </div>
+            <button class="dropdown-btn">Morphological Transformations
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i6.html" %}
+            </div>
+            <button class="dropdown-btn">Image Gradients
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i7.html" %}
+            </div>
+            <button class="dropdown-btn">Canny Edge Detection
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i8.html" %}
+            </div>
+            <button class="dropdown-btn">Image Pyramids
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i9.html" %}
+            </div>
+            <button class="dropdown-btn">Contours in OpenCV
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i10.html" %}
+            </div>
+            <button class="dropdown-btn">Histograms in OpenCV
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i11.html" %}
+            </div>
+            <button class="dropdown-btn">Image Transforms in OpenCV
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i12.html" %}
+            </div>
+            <button class="dropdown-btn">Template Matching
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i13.html" %}
+            </div>
+            <button class="dropdown-btn">Hough Line Transform
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i14.html" %}
+            </div>
+            <button class="dropdown-btn">Hough Circle Transform
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i15.html" %}
+            </div>
+            <button class="dropdown-btn">Image Segmentation with Watershed Algorithm
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i16.html" %}
+            </div>
+            <button class="dropdown-btn">Interactive Foreground Extraction using GrabCut Algorithm
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container"> 
+                {% include "includes/i17.html" %}
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </form>
+    </ul>
+
+</div>
+
+<div class="main">
+    <div class='column'>
+        <div>
+            {% if ocv_info.include_original %}
+                <img id='original_image' src="data:;base64,{{ original_bytes }}"/>
+            {% endif %}
+            <img id='modified_image' src="data:;base64,{{ modified_bytes }}"/>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $("#form_ocv").submit(function(e) {
+    e.preventDefault();
+    console.log('prevented refresh')
+    });
+</script>
+
+
+{% endblock %}

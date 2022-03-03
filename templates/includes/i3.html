@@ -1,0 +1,107 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='scaling' name='scaling' {% if  ocv_info.scaling %} checked=true {% endif %}>
+            <label class='form-check-label' for='scaling'>Scaling</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>fx &nbsp</label>
+            <span class="font-weight-bold indigo-text">50%</span>
+                <input type="range" class="custom-range" id="fx" name='fx' min="50" max="110" step="10" value="{{ ocv_info.fx }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">110%</span>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>fy &nbsp</label>
+            <span class="font-weight-bold indigo-text">50%</span>
+                <input type="range" class="custom-range" id="fy" name='fy' min="50" max="110" step="10" value="{{ ocv_info.fy }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">110%</span>
+        </div>
+        <select value="{{ ocv_info.Interpolation }}" name="Interpolation" id="Interpolation" onchange="document.getElementById('form_ocv').submit()">
+            <option value="{{ ocv_info.Interpolation }}">{{ ocv_info.Interpolation }}</option>
+            <option value="INTER_LINEAR">INTER_LINEAR</option>
+            <option value="INTER_NEAREST">INTER_NEAREST</option>
+            <option value="INTER_AREA">INTER_AREA</option>
+            <option value="INTER_CUBIC">INTER_CUBIC</option>
+            <option value="INTER_LANCZOS4">INTER_LANCZOS4</option>
+        </select>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='translation' name='translation' {% if  ocv_info.translation %} checked=true {% endif %}>
+            <label class='form-check-label' for='translation'>Translation</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>tx &nbsp</label>
+            <span class="font-weight-bold indigo-text">-{{ ocv_info.tx_max }}</span>
+                <input type="range" class="custom-range" id="tx" name='tx' min="-{{ ocv_info.tx_max }}" max="{{ ocv_info.tx_max }}" step="10" value="{{ ocv_info.tx }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">{{ ocv_info.tx_max }}</span>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>ty &nbsp</label>
+            <span class="font-weight-bold indigo-text">-{{ ocv_info.ty_max }}</span>
+                <input type="range" class="custom-range" id="fy" name='ty' min="-{{ ocv_info.ty_max }}" max="{{ ocv_info.ty_max }}" step="10" value="{{ ocv_info.ty }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">{{ ocv_info.ty_max }}</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='rotation' name='rotation' {% if  ocv_info.rotation %} checked=true {% endif %}>
+            <label class='form-check-label' for='rotation'>Rotation</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>tht &nbsp</label>
+            <span class="font-weight-bold indigo-text">-180</span>
+                <input type="range" class="custom-range" id="theta" name='theta' min="-180" max="180" step="10" value="{{ ocv_info.theta }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">180</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='affine_transf' name='affine_transf' {% if  ocv_info.affine_transf %} checked=true {% endif %}>
+            <label class='form-check-label' for='affine_transf'>Affine Transformation</label>
+        </div>
+        <div class="col-xs-2" onchange="document.getElementById('form_ocv').submit()">
+            <label for="p11">p11</label>
+            <input class="smaller-input" id="p11x" name='p11x' type="text" placeholder="0" value="{{ ocv_info.p11x }}">
+            <input class="smaller-input" id="p11y" name='p11y' type="text" placeholder="0" value="{{ ocv_info.p11y }}">
+            <label for="p12">p12</label>
+            <input class="smaller-input" id="p12x" name='p12x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p12x }}">
+            <input class="smaller-input" id="p12y" name='p12y' type="text" placeholder="0" value="{{ ocv_info.p12y }}">
+            <label for="p13">p13</label>
+            <input class="smaller-input" id="p13x" name='p13x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p13x }}">
+            <input class="smaller-input" id="p13y" name='p13y' type="text" placeholder="{{ ocv_info.ty_max }}" value="{{ ocv_info.p13y }}">
+            <label for="p21">p21</label>
+            <input class="smaller-input" id="p21x" name='p21x' type="text" placeholder="0" value="{{ ocv_info.p21x }}">
+            <input class="smaller-input" id="p21y" name='p21y' type="text" placeholder="0" value="{{ ocv_info.p21y }}">
+            <label for="p22">p22</label>
+            <input class="smaller-input" id="p22x" name='p22x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p22x }}">
+            <input class="smaller-input" id="p22y" name='p22y' type="text" placeholder="0" value="{{ ocv_info.p22y }}">
+            <label for="p23">p23</label>
+            <input class="smaller-input" id="p23x" name='p23x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p23x }}">
+            <input class="smaller-input" id="p23y" name='p23y' type="text" placeholder="{{ ocv_info.ty_max }}" value="{{ ocv_info.p23y }}">
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='perspective_transf' name='perspective_transf' {% if  ocv_info.perspective_transf %} checked=true {% endif %}>
+            <label class='form-check-label' for='perspective_transf'>Perspective Transf. &nbsp &nbsp &nbsp</label>
+        </div>
+        <div class="col-xs-2" onchange="document.getElementById('form_ocv').submit()">
+            <label for="p11">p14</label>
+            <input class="smaller-input" id="p14x" name='p14x' type="text" placeholder="0" value="{{ ocv_info.p14x }}">
+            <input class="smaller-input" id="p14y" name='p14y' type="text" placeholder="0" value="{{ ocv_info.p14y }}">
+            <label for="p12">p15</label>
+            <input class="smaller-input" id="p15x" name='p15x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p15x }}">
+            <input class="smaller-input" id="p15y" name='p15y' type="text" placeholder="0" value="{{ ocv_info.p15y }}">
+            <label for="p13">p16</label>
+            <input class="smaller-input" id="p16x" name='p16x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p16x }}">
+            <input class="smaller-input" id="p16y" name='p16y' type="text" placeholder="0" value="{{ ocv_info.p16y }}">
+            <label for="p13">p17</label>
+            <input class="smaller-input" id="p17x" name='p17x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p17x }}">
+            <input class="smaller-input" id="p17y" name='p17y' type="text" placeholder="{{ ocv_info.ty_max }}" value="{{ ocv_info.p17y }}">
+            <label for="p21">p24</label>
+            <input class="smaller-input" id="p24x" name='p24x' type="text" placeholder="0" value="{{ ocv_info.p24x }}">
+            <input class="smaller-input" id="p24y" name='p24y' type="text" placeholder="0" value="{{ ocv_info.p24y }}">
+            <label for="p22">p25</label>
+            <input class="smaller-input" id="p25x" name='p25x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p25x }}">
+            <input class="smaller-input" id="p25y" name='p25y' type="text" placeholder="0" value="{{ ocv_info.p25y }}">
+            <label for="p23">p26</label>
+            <input class="smaller-input" id="p26x" name='p26x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p26x }}">
+            <input class="smaller-input" id="p26y" name='p26y' type="text" placeholder="0" value="{{ ocv_info.p26y }}">
+            <label for="p23">p27</label>
+            <input class="smaller-input" id="p27x" name='p27x' type="text" placeholder="{{ ocv_info.tx_max }}" value="{{ ocv_info.p27x }}">
+            <input class="smaller-input" id="p27y" name='p27y' type="text" placeholder="{{ ocv_info.ty_max }}" value="{{ ocv_info.p27y }}">
+        </div>
+</li>

@@ -1,0 +1,48 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/df/d9d/tutorial_py_colorspaces.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='grey' name='grey' {% if ocv_info.grey %} checked=true {% endif %}>
+            <label class='form-check-label' for='grey'>Grey</label>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='HSV' name='HSV' {% if ocv_info.HSV %} checked=true {% endif %}>
+            <label class='form-check-label' for='HSV'>HSV</label>
+        </div>
+        <div>
+            <label>HUE_min</label>
+            <span class="font-weight-bold indigo-text">0</span>
+        	<input type="range" id="HUE_min" name='HUE_min' min="0" max="{{ ocv_info.HUE_max }}" step="1" value="{{ ocv_info.HUE_min }}" onchange="document.getElementById('form_ocv').submit()">
+    		<span class="font-weight-bold indigo-text">{{ ocv_info.HUE_max }}</span>
+            <label>HUE_max</label>
+            <span class="font-weight-bold indigo-text">{{ ocv_info.HUE_min }}</span>
+            <input type="range" id="HUE_max" name='HUE_max' min="{{ ocv_info.HUE_min }}" max="179" step="1" value="{{ ocv_info.HUE_max }}" onchange="document.getElementById('form_ocv').submit()">
+    		<span class="font-weight-bold indigo-text">179</span>
+        </div>
+        <div>
+            <label>SAT_min</label>
+            <span class="font-weight-bold indigo-text">0</span>
+        	<input type="range" id="SAT_min" name='SAT_min' min="0" max="{{ ocv_info.SAT_max }}" step="1" value="{{ ocv_info.SAT_min }}" onchange="document.getElementById('form_ocv').submit()">
+    		<span class="font-weight-bold indigo-text">{{ ocv_info.SAT_max }}</span>
+            <label>SAT_max</label>
+            <span class="font-weight-bold indigo-text">{{ ocv_info.SAT_min }}</span>
+            <input type="range" id="SAT_max" name='SAT_max' min="{{ ocv_info.SAT_min }}" max="255" step="1" value="{{ ocv_info.SAT_max }}" onchange="document.getElementById('form_ocv').submit()">
+    		<span class="font-weight-bold indigo-text">255</span>
+        </div>
+        <div>
+            <label>VAL_min</label>
+            <span class="font-weight-bold indigo-text">0</span>
+        	<input type="range" id="VAL_min" name='VAL_min' min="0" max="{{ ocv_info.VAL_max }}" step="1" value="{{ ocv_info.VAL_min }}" onchange="document.getElementById('form_ocv').submit()">
+    		<span class="font-weight-bold indigo-text">{{ ocv_info.VAL_max }}</span>
+            <label>VAL_max</label>
+            <span class="font-weight-bold indigo-text">{{ ocv_info.VAL_min }}</span>
+            <input type="range" id="VAL_max" name='VAL_max' min="{{ ocv_info.VAL_min }}" max="255" step="1" value="{{ ocv_info.VAL_max }}" onchange="document.getElementById('form_ocv').submit()">
+    		<span class="font-weight-bold indigo-text">255</span>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='RGB' name='RGB' {% if ocv_info.RGB and ocv_info.HSV %} checked=true {% endif %} {% if not ocv_info.HSV %} disabled="true" {% endif %}>
+            <label class='form-check-label' for='RGB'>RGB</label>
+        </div>
+
+</li>
+
+

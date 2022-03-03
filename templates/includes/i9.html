@@ -1,0 +1,11 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/dc/dff/tutorial_py_pyramids.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='g_p_down' name='g_p_down' {% if  ocv_info.g_p_down %} checked=true {% endif %}>
+            <label class='form-check-label' for='g_p_down'>Gaussian Pyramid Down</label>
+        </div>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='g_p_up' name='g_p_up' {% if  ocv_info.g_p_up %} checked=true {% endif %}>
+            <label class='form-check-label' for='g_p_up'>Gaussian Pyramid Up</label>
+        </div>
+</li>

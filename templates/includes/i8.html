@@ -1,0 +1,26 @@
+<li>
+    <a href="https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html" target="_blank">Documentation</a>
+        <div class='form-check'>
+            <input class='form-check-input' onchange="document.getElementById('form_ocv').submit()" type="checkbox" id='canny_edge' name='canny_edge' {% if  ocv_info.canny_edge %} checked=true {% endif %}>
+            <label class='form-check-label' for='canny_edge'>Canny Edge Detection</label>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>th1 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="th1" name='th1' min="1" max="500" step="1" value="{{ ocv_info.th1 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">500</span>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>th2 &nbsp</label>
+            <span class="font-weight-bold indigo-text">1</span>
+                <input type="range" class="custom-range" id="th2" name='th2' min="1" max="500" step="1" value="{{ ocv_info.th2 }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">500</span>
+        </div>
+        <div class="d-flex justify-content-left">
+            <label>a_s &nbsp</label>
+            <span class="font-weight-bold indigo-text">3</span>
+                <input type="range" class="custom-range" id="a_s" name='a_s' min="3" max="7" step="2" value="{{ ocv_info.a_s }}" onchange="document.getElementById('form_ocv').submit()">
+            <span class="font-weight-bold indigo-text">7</span>
+        </div>
+
+</li>
