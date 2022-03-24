@@ -758,4 +758,5 @@ def ocv():
         return render_template('ocv.html', modified_bytes=modified_bytes, ocv_info=ocv_info)
     
 if __name__ == '__main__':
-    app.run(host='localhost', port=5001)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
