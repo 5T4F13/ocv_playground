@@ -24,7 +24,7 @@ def ocv():
     if request.form.get('img_select'):
         original = cv2.imread(f"images/{request.form.get('img_select')}")
     else:
-        original = cv2.imread('./images/1.png')
+        original = cv2.imread(os.path.join(path, images[0]))
     scale = 500 / original.shape[1]
 
     # Resize original image to fit screen
