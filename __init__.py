@@ -19,7 +19,7 @@ def homepage():
 @app.route('/ocv', methods=['GET', 'POST'])
 def ocv():
     # Select images from folder /images
-    path = 'images'
+    path = './images'
     images = os.listdir(path)
     if request.form.get('img_select'):
         original = cv2.imread(f"images/{request.form.get('img_select')}")
