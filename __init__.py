@@ -21,6 +21,8 @@ def ocv():
     # Select images from folder /images
     path = './images'
     images = os.listdir(path)
+    if '.wh..wh..opq' in images:
+    images.remove('.wh..wh..opq')
     if request.form.get('img_select'):
         original = cv2.imread(f"images/{request.form.get('img_select')}")
     else:
